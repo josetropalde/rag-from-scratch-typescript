@@ -1,5 +1,7 @@
 <div align="center">
 
+**Documentation:** English | [Português (Brasil)](README.pt-BR.md)
+
 # RAG from Scratch with TypeScript
 
 **A minimal Retrieval-Augmented Generation implementation, built to understand the mechanics behind RAG — without orchestration frameworks or vector databases.**
@@ -52,11 +54,11 @@ The implementation has two main phases:
 
 I started with three plain-text files containing fictional company information:
 
-| File                   | Contents           |
-| ---------------------- | ------------------ |
-| `docs/ferias.txt`      | Vacation policy    |
-| `docs/home-office.txt` | Remote-work policy |
-| `docs/beneficios.txt`  | Employee benefits  |
+| File                    | Contents           |
+| ----------------------- | ------------------ |
+| `files/vacation.txt`    | Vacation policy    |
+| `files/home-office.txt` | Remote-work policy |
+| `files/benefits.txt`    | Employee benefits  |
 
 Each entire file is treated as **one document**. This keeps the example simple, but means there is no chunking yet.
 
@@ -179,10 +181,10 @@ npx tsx src/index.ts "How many days can I work from home?"
 Example output (illustrative; actual similarity scores and wording may vary):
 
 ```text
-Documento recuperado: home-office.txt
-Similaridade: 0.7...
+Retrived document: home-office.txt
+Similarity: 0.7...
 
-Resposta: Você pode trabalhar remotamente até 3 dias por semana.
+Answer: You can work 3 days remotly per week.
 ```
 
 Try additional questions:
