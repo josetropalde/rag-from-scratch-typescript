@@ -1,0 +1,3 @@
+Employees are entitled to 30 days of vacation per year.
+
+Vacation must be requested at least 30 days in advance.
