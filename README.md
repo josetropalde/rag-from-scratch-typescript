@@ -195,6 +195,51 @@ npx tsx src/index.ts "What is the maternity leave policy?"
 
 The last question is useful for exploring how the system behaves when the knowledge base does not contain an answer.
 
+## Running with Docker
+
+You can run this project using Docker without installing Node.js or npm locally.
+
+### Prerequisites
+
+- Docker installed and running
+- A valid OpenAI API key
+
+### 1. Configure environment variables
+
+```bash
+cp .env.example .env
+```
+
+Add your OpenAI API key to `.env`:
+
+```env
+OPENAI_API_KEY=your_api_key_here
+```
+
+### 2. Build the Docker image
+
+```bash
+docker build -t rag-from-scratch-typescript .
+```
+
+### 3. Ask a question
+
+```bash
+docker run --rm --env-file .env rag-from-scratch-typescript "How many vacation days do employees have?"
+```
+
+The application will:
+
+1. Load the local knowledge base.
+2. Generate embeddings for each document.
+3. Generate an embedding for your question.
+4. Retrieve the most semantically relevant document using cosine similarity.
+5. Generate an answer grounded in the retrieved context.
+
+**Note:** Document embeddings are regenerated on every execution. This is an intentional simplification for educational purposes.
+
+The application uses the OpenAI API, which requires network access and may incur usage costs.
+
 ## Design decisions and trade-offs
 
 | Decision                 | Why I chose it                           | Trade-off                                             |
