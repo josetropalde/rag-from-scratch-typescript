@@ -34,7 +34,7 @@ async function indexDocuments(): Promise<Document[]> {
   const documents: Document[] = [];
 
   for (const name of files) {
-    const content = await readFile(`docs/${name}`, "utf-8");
+    const content = await readFile(`files/${name}`, "utf-8");
     const embedding = await embed(content);
 
     documents.push({ name, content, embedding });

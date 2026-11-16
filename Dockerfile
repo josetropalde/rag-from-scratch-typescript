@@ -9,7 +9,7 @@ RUN npm ci
 # Copy application source and documents
 COPY tsconfig.json ./
 COPY src ./src
-COPY docs ./docs
+COPY files ./files
 
 # Run the RAG application
 ENTRYPOINT ["./node_modules/.bin/tsx", "src/index.ts"]
